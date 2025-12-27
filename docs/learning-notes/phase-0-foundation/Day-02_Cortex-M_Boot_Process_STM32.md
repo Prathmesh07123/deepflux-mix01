@@ -142,7 +142,9 @@ You now understand:
 
 ## 🔜 Day 03 Preview
 
-Memory map and linker scripts.
+- Clock tree (HSE, HSI, PLL)
+- Why audio needs stable clocks
+- APB vs AHB
 
 ---
 
