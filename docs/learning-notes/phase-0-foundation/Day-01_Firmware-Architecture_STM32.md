@@ -233,10 +233,10 @@ If anything above feels unclear,
 ## 🔜 Day‑02 Preview
 
 **Day‑02:**
-- STM32 Clock Tree (HSI, HSE, PLL)
-- GPIO modes
-- Alternate function mapping
-- Why clocks break everything if misunderstood
+- ARM Cortex-M basics
+- Registers, stack, heap
+- Startup code overview
+- Vector table concept
 
 ---
 
