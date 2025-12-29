@@ -1,0 +1,6 @@
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M3/Nucleo-STM32F103RB/Nucleo-f103rb/en.stm32cubef1/STM32Cube_FW_F1_V1.8.0/Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	2
+../Src/main.c:45:6:CLK_Init	5
+../Src/main.c:73:6:GPIO_Init	1
+../Src/main.c:85:6:TIM2_Init	1
+../Src/main.c:97:6:TIM2_IRQHandler	6
+../Src/main.c:136:5:main	1
