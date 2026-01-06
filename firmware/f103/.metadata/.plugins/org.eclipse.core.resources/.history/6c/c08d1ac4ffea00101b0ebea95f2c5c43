@@ -1,0 +1,48 @@
+//--------------------- Ganpati Bappa Morya ------------------
+
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f1xx.h>
+#include "rcc.h"
+#include "gpio.h"
+#include "timer.h"
+#include "button.h"
+
+
+
+
+
+int main(void)
+{
+	RCC_72_Init();
+	GPIO_Init();
+	Button_Init();
+
+	TIM3_Button_Init();
+
+	button_event_t evt;
+
+	while(1){
+
+		if(Button_GetEvent(&evt)){
+			if(evt.button == BTN_CUE && evt.type == BUTTON_EVENT_PRESSED){
+				printf("CUE pressed\n");
+				fflush(stdout);
+			}
+		}
+
+	}
+
+}
+
+//================== ISR ==================
+
+void TIM3_IRQHandler(void){
+
+    if (TIM3->SR & TIM3_SR_UIF){
+
+        TIM3->SR &= ~TIM3_SR_UIF;
+        Button_Scan_1ms();
+    }
+}

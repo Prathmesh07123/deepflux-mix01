@@ -1,0 +1,45 @@
+!SESSION 2026-01-06 11:15:55.117 -----------------------------------------------
+eclipse.buildId=Version 1.17.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-06 11:16:35.336
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-06 11:16:35.340
+!MESSAGE Log4j2 initialized with config file C:\Users\prath\OneDrive\Desktop\DeepFlux Technologies\DeepFlux MIX-01\Firmware\F103\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-06 11:16:42.174
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2026-01-06 11:17:24.100
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/toolchains/7-2018-q2-update.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2026-01-06 11:18:03.946
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/toolchains/7-2018-q2-update/1.17.0.
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 13:00:40.948
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (3 sources, 53 headers) in 1.33 sec: 1,950 declarations; 2,835 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 13:41:01.206
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (3 sources, 53 headers) in 0.223 sec: 1,950 declarations; 2,835 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 14:32:24.751
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (5 sources, 65 headers) in 0.605 sec: 2,816 declarations; 4,573 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 14:33:05.007
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (5 sources, 65 headers) in 0.369 sec: 2,816 declarations; 4,573 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 14:34:24.672
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (5 sources, 65 headers) in 0.357 sec: 2,816 declarations; 4,573 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 14:35:14.075
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (5 sources, 65 headers) in 0.327 sec: 2,816 declarations; 4,571 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 15:05:17.604
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (5 sources, 65 headers) in 0.393 sec: 2,816 declarations; 4,573 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-06 18:35:07.461
+!MESSAGE Indexed 'deepflux-mix-01-f103-proto' (8 sources, 68 headers) in 0.4 sec: 2,884 declarations; 4,797 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.026%)

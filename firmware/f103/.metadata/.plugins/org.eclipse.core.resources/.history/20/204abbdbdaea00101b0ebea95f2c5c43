@@ -1,0 +1,13 @@
+/*
+ * gpio.h
+ *
+ *  Created on: Jan 6, 2026
+ *      Author: prath
+ */
+
+#ifndef CORE_GPIO_H_
+#define CORE_GPIO_H_
+
+void GPIO_Init(void);
+
+#endif /* CORE_GPIO_H_ */

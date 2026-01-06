@@ -1,0 +1,20 @@
+//--------------------- Ganpati Bappa Morya ------------------
+
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f1xx.h>
+#include "rcc.h"
+#include "gpio.h"
+#include "timer.h"
+
+
+
+
+int main(void)
+{
+	RCC_72_Init();
+	GPIO_Init();
+	TIM3_Button_Init();
+
+}

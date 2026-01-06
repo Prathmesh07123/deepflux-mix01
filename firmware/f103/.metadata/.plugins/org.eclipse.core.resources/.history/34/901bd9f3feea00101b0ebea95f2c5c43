@@ -1,0 +1,41 @@
+//--------------- Ganpati Bappa Morya ----------------
+
+#include <stdint.h>
+#include <stm32f1xx.h>
+#include "button.h"
+
+#define EVENT_QUEUE_SIZE 8
+#define DEBOUNCE_TIME   8
+
+static const uint16_t button_pins[BTN_COUNT] = {
+
+		(1 << 5),	// Encoder Button PA5
+		(1 << 6),	// CUE Button PA6
+		(1 << 7)	// Play Button PA7
+};
+
+static uint8_t raw_last[BTN_COUNT];			// Last raw GPIO read
+static uint8_t stable_state[BTN_COUNT];		// Debounced state
+static uint8_t debounce_time[BTN_COUNT];	// Counter for each button
+
+static volatile button_event_t event_queue[EVENT_QUEUE_SIZE];
+static volatile uint8_t evt_head = 0;
+static volatile uint8_t evt_tail = 0;
+
+//=============== Internal Helper ================
+static void Button_PushEvent(button_id_t btn, button_event_type_t type){
+
+	uint8_t next = (evt_head + 1) % EVENT_QUEUE_SIZE;
+
+	//drop if Buffer FULL
+	if(next == evt_tail){
+		return;
+	}
+
+//	event_queue[evt_head].
+}
+
+
+
+
+
