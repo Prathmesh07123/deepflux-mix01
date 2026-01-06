@@ -22,15 +22,15 @@ int __io_putchar(int ch); // Receive Char From Printf Function
 
 void USART2_INIT(void){
 
-	// Enable Clock Of GPIOA
-	*pAPB2ENR |= (1 << 2);
+//	// Enable Clock Of GPIOA
+//	*pAPB2ENR |= (1 << 2);
 
 	//Enable Clock Of USART2
 	*pAPB1ENR |= (1 << 17);
 
-	// Configure GPIO To Alternate Function (CRL)
-	*pGPIOACRL &= ~(0xF << 8);
-	*pGPIOACRL |= (0xB << 8); // CNF2 = 10 , MODE2 = 11
+//	// Configure GPIO To Alternate Function (CRL)
+//	*pGPIOACRL &= ~(0xF << 8);
+//	*pGPIOACRL |= (0xB << 8); // CNF2 = 10 , MODE2 = 11
 
 	// Configure Baud Rate too 9600
 	*pUART_2BRR = 0x0EA6;

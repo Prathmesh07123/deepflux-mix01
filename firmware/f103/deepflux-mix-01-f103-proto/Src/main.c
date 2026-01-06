@@ -12,6 +12,8 @@
 
 #define DEBUG
 
+volatile int16_t encoder_last = 0;
+
 int main(void)
 {
 	RCC_72_Init();
@@ -19,7 +21,7 @@ int main(void)
 	USART2_INIT();
 	Button_Init();
 
-
+	TIM2_Encoder_Init();
 	TIM3_Button_Init();
 #ifdef DEBUG
 	printf("Debugging Start...\n");
@@ -31,13 +33,41 @@ int main(void)
 	while(1){
 
 		if(Button_GetEvent(&evt)){
-			if(evt.button == BTN_CUE && evt.type == BUTTON_EVENT_PRESSED){
-				printf("CUE pressed\n");
-				fflush(stdout);
+
+			if(evt.type == BUTTON_EVENT_PRESSED){
+				switch(evt.button){
+					case BTN_ENCODER:
+						printf("Encode Button pressed\n");
+						fflush(stdout);
+						break;
+					case BTN_CUE:
+						printf("CUE pressed\n");
+						fflush(stdout);
+						break;
+					case BTN_PLAY:
+						printf("Play pressed\n");
+						fflush(stdout);
+						break;
+					case BTN_COUNT:
+						break;
+				}
 			}
-			if(evt.button == BTN_PLAY && evt.type == BUTTON_EVENT_PRESSED){
-				printf("Play pressed\n");
+
+		}
+		int16_t pos = (int16_t)TIM2->CNT;
+
+		int16_t delta = pos - encoder_last;
+
+		if(delta >= 2){
+			printf("Encoder +1\n");
+			fflush(stdout);
+			encoder_last += 2;
+		}
+		else{
+			if(delta <= -2){
+				printf("Encoder -1\n");
 				fflush(stdout);
+				encoder_last -= 2;
 			}
 		}
 

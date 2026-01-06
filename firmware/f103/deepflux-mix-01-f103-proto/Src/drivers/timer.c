@@ -4,6 +4,33 @@
 #include <stm32f1xx.h>
 #include "timer.h"
 
+void TIM2_Encoder_Init(void){
+
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+	//-------------- Reset Timer Reg -----------------
+	TIM2->CR1 = 0;
+	TIM2->CR2 = 0;
+	TIM2->SMCR = 0;
+
+	TIM2->SMCR |= TIM2_SMCR_SMS_EN;
+
+	TIM2->CCMR1 &= ~0xFFFF;
+	TIM2->CCMR1 |= TIM2_CCMR1_CC1S_01;
+	TIM2->CCMR1 |= TIM2_CCMR1_CC2S_01;
+	TIM2->CCMR1 |= TIM2_CCMR1_8S_TI1;
+	TIM2->CCMR1 |= TIM2_CCMR1_8S_TI2;
+
+	TIM2->CCER |= TIM2_CCER_ENC1;
+	TIM2->CCER |= TIM2_CCER_ENC2;
+
+	TIM2->ARR = 0xFFFF;
+	TIM2->CNT = 0;
+
+	TIM2->CR1 |= TIM2_CR1_ENC;
+
+}
+
 void TIM3_Button_Init(void){
 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
