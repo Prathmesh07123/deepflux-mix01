@@ -8,6 +8,7 @@
 #include "gpio.h"
 #include "timer.h"
 #include "button.h"
+#include "encoder.h"
 #include "Printf_debug.h"
 
 #define DEBUG
@@ -20,6 +21,7 @@ int main(void)
 	GPIO_Init();
 	USART2_INIT();
 	Button_Init();
+	Encoder_Init();
 
 	TIM2_Encoder_Init();
 	TIM3_Button_Init();
@@ -28,14 +30,15 @@ int main(void)
 	fflush(stdout);
 #endif
 
-	button_event_t evt;
+	button_event_t btn_evt;
+	encoder_event_t enc_evt;
 
 	while(1){
 
-		if(Button_GetEvent(&evt)){
+		if(Button_GetEvent(&btn_evt)){
 
-			if(evt.type == BUTTON_EVENT_PRESSED){
-				switch(evt.button){
+			if(btn_evt.type == BUTTON_EVENT_PRESSED){
+				switch(btn_evt.button){
 					case BTN_ENCODER:
 						printf("Encode Button pressed\n");
 						fflush(stdout);
@@ -54,22 +57,33 @@ int main(void)
 			}
 
 		}
-		int16_t pos = (int16_t)TIM2->CNT;
 
-		int16_t delta = pos - encoder_last;
+		if(Encoder_GetEvent(&enc_evt)){
 
-		if(delta >= 2){
-			printf("Encoder +1\n");
-			fflush(stdout);
-			encoder_last += 2;
-		}
-		else{
-			if(delta <= -2){
+			if(enc_evt.delta > 0){
+				printf("Encoder +1\n");
+			}
+			else{
 				printf("Encoder -1\n");
-				fflush(stdout);
-				encoder_last -= 2;
 			}
 		}
+
+//		int16_t pos = (int16_t)TIM2->CNT;
+//
+//		int16_t delta = pos - encoder_last;
+//
+//		if(delta >= 2){
+//			printf("Encoder +1\n");
+//			fflush(stdout);
+//			encoder_last += 2;
+//		}
+//		else{
+//			if(delta <= -2){
+//				printf("Encoder -1\n");
+//				fflush(stdout);
+//				encoder_last -= 2;
+//			}
+//		}
 
 	}
 
@@ -82,6 +96,8 @@ void TIM3_IRQHandler(void){
     if (TIM3->SR & TIM3_SR_UIF){
 
         TIM3->SR &= ~TIM3_SR_UIF;
+
         Button_Scan_1ms();
+        Encoder_Scan_1ms();
     }
 }
