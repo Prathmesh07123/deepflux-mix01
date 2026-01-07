@@ -1,3 +1,4 @@
 1767686036258	Rename resource 'driver'
 1767692089186	Move 'gpio.h' to 'drivers'
 1767692096595	Move 'gpio.c' to 'drivers'
+1767757799917	Move 'encoder.c' to 'drivers'
