@@ -1,0 +1,6 @@
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M3/Nucleo-STM32F103RB/Nucleo-f103rb/en.stm32cubef1/STM32Cube_FW_F1_V1.8.0/Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M3/Nucleo-STM32F103RB/Nucleo-f103rb/en.stm32cubef1/STM32Cube_FW_F1_V1.8.0/Drivers/CMSIS/Include/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+../Src/drivers/adc.c:30:13:ADC_PushEvent	24	static
+../Src/drivers/adc.c:48:6:ADC_Init	16	static
+../Src/drivers/adc.c:90:6:ADC_Scan_ISR	16	static
+../Src/drivers/adc.c:117:9:ADC_GetEvent	16	static

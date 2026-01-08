@@ -11,6 +11,7 @@ Src/main.o: ../Src/main.c \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/timer.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/button.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/encoder.h \
+ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/adc.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/core/Printf_debug.h
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm\ Cortex\ M3/Nucleo-STM32F103RB/Nucleo-f103rb/en.stm32cubef1/STM32Cube_FW_F1_V1.8.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm\ Cortex\ M3/Nucleo-STM32F103RB/Nucleo-f103rb/en.stm32cubef1/STM32Cube_FW_F1_V1.8.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:
@@ -24,4 +25,5 @@ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/timer.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/button.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/encoder.h:
+C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/drivers/adc.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/Firmware/F103/deepflux-mix-01-f103-proto/Inc/core/Printf_debug.h:

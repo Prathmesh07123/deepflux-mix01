@@ -1,5 +1,6 @@
 "./Src/core/Printf_debug.o"
 "./Src/core/rcc.o"
+"./Src/drivers/adc.o"
 "./Src/drivers/button.o"
 "./Src/drivers/encoder.o"
 "./Src/drivers/gpio.o"

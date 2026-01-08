@@ -5,18 +5,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/drivers/adc.c \
 ../Src/drivers/button.c \
 ../Src/drivers/encoder.c \
 ../Src/drivers/gpio.c \
 ../Src/drivers/timer.c 
 
 OBJS += \
+./Src/drivers/adc.o \
 ./Src/drivers/button.o \
 ./Src/drivers/encoder.o \
 ./Src/drivers/gpio.o \
 ./Src/drivers/timer.o 
 
 C_DEPS += \
+./Src/drivers/adc.d \
 ./Src/drivers/button.d \
 ./Src/drivers/encoder.d \
 ./Src/drivers/gpio.d \
@@ -30,7 +33,7 @@ Src/drivers/%.o Src/drivers/%.su Src/drivers/%.cyclo: ../Src/drivers/%.c Src/dri
 clean: clean-Src-2f-drivers
 
 clean-Src-2f-drivers:
-	-$(RM) ./Src/drivers/button.cyclo ./Src/drivers/button.d ./Src/drivers/button.o ./Src/drivers/button.su ./Src/drivers/encoder.cyclo ./Src/drivers/encoder.d ./Src/drivers/encoder.o ./Src/drivers/encoder.su ./Src/drivers/gpio.cyclo ./Src/drivers/gpio.d ./Src/drivers/gpio.o ./Src/drivers/gpio.su ./Src/drivers/timer.cyclo ./Src/drivers/timer.d ./Src/drivers/timer.o ./Src/drivers/timer.su
+	-$(RM) ./Src/drivers/adc.cyclo ./Src/drivers/adc.d ./Src/drivers/adc.o ./Src/drivers/adc.su ./Src/drivers/button.cyclo ./Src/drivers/button.d ./Src/drivers/button.o ./Src/drivers/button.su ./Src/drivers/encoder.cyclo ./Src/drivers/encoder.d ./Src/drivers/encoder.o ./Src/drivers/encoder.su ./Src/drivers/gpio.cyclo ./Src/drivers/gpio.d ./Src/drivers/gpio.o ./Src/drivers/gpio.su ./Src/drivers/timer.cyclo ./Src/drivers/timer.d ./Src/drivers/timer.o ./Src/drivers/timer.su
 
 .PHONY: clean-Src-2f-drivers
 

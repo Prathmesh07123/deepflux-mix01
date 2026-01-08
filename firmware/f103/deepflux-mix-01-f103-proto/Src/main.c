@@ -9,11 +9,11 @@
 #include "timer.h"
 #include "button.h"
 #include "encoder.h"
+#include "adc.h"
 #include "Printf_debug.h"
 
 #define DEBUG
 
-volatile int16_t encoder_last = 0;
 
 int main(void)
 {
@@ -22,9 +22,11 @@ int main(void)
 	USART2_INIT();
 	Button_Init();
 	Encoder_Init();
+	ADC_Init();
 
 	TIM2_Encoder_Init();
-	TIM3_Button_Init();
+	TIM3_ADC_Init();
+	TIM4_Button_Init();
 #ifdef DEBUG
 	printf("Debugging Start...\n");
 	fflush(stdout);
@@ -32,6 +34,7 @@ int main(void)
 
 	button_event_t btn_evt;
 	encoder_event_t enc_evt;
+	adc_event_t adc_evt;
 
 	while(1){
 
@@ -68,6 +71,11 @@ int main(void)
 			}
 		}
 
+		if(ADC_GetEvent(&adc_evt)){
+			printf("ADC : %u\r\n", adc_evt.value);
+			fflush(stdout);
+		}
+
 //		int16_t pos = (int16_t)TIM2->CNT;
 //
 //		int16_t delta = pos - encoder_last;
@@ -91,13 +99,22 @@ int main(void)
 
 //================== ISR ==================
 
-void TIM3_IRQHandler(void){
+void TIM4_IRQHandler(void){
 
-    if (TIM3->SR & TIM3_SR_UIF){
+    if (TIM4->SR & TIM4_SR_UIF){
 
-        TIM3->SR &= ~TIM3_SR_UIF;
+        TIM4->SR &= ~TIM4_SR_UIF;
 
         Button_Scan_1ms();
         Encoder_Scan_1ms();
+    }
+}
+
+void ADC1_2_IRQHandler(void)
+{
+    if (ADC1->SR & ADC_SR_EOC)
+    {
+    	ADC_Scan_ISR();
+        ADC1->SR &= ~ADC_SR_EOC;
     }
 }

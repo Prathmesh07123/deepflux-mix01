@@ -31,16 +31,33 @@ void TIM2_Encoder_Init(void){
 
 }
 
-void TIM3_Button_Init(void){
+void TIM3_ADC_Init(void){
 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 
 	TIM3->PSC 	= 7200 - 1;		//Prescaler for 0.1ms tick
 	TIM3->ARR 	= 10 - 1;		//ARR After 0.1 * 10 tick = 1ms
-	TIM3->DIER |= TIM3_DIER_UIE;
-	NVIC_EnableIRQ(TIM3_IRQn);
-	TIM3->CNT 	= 0;
-	TIM3->CR1  |= TIM3_CR1_CEN;
+
+	TIM3->CR2 &= ~(0b111 << 4);
+	TIM3->CR2 |= TIM3_CR2_MMS_UP;
+
+	TIM3->CNT = 0;
+	TIM3->CR1 |= TIM3_CR1_CEN;
+
+
+}
+
+void TIM4_Button_Init(void){
+
+	RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
+
+	TIM4->PSC 	= 7200 - 1;		//Prescaler for 0.1ms tick
+	TIM4->ARR 	= 10 - 1;		//ARR After 0.1 * 10 tick = 1ms
+	TIM4->DIER |= TIM4_DIER_UIE;
+	NVIC_SetPriority(TIM4_IRQn, 1);
+	NVIC_EnableIRQ(TIM4_IRQn);
+	TIM4->CNT 	= 0;
+	TIM4->CR1  |= TIM4_CR1_CEN;
 
 }
 
