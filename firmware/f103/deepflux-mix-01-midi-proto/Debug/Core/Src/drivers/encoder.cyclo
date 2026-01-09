@@ -1,0 +1,4 @@
+../Core/Src/drivers/encoder.c:26:13:Encoder_PushEvent	2
+../Core/Src/drivers/encoder.c:43:6:Encoder_Init	1
+../Core/Src/drivers/encoder.c:51:6:Encoder_Scan_1ms	3
+../Core/Src/drivers/encoder.c:74:9:Encoder_GetEvent	2

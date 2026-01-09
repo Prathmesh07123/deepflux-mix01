@@ -1,1 +1,5 @@
 1767704505039	Delete resource 'deepflux-mix-01-f103-proto/Inc/core/Printf_debug.c'
+1767942559542	Delete 3 resources
+1767962810213	Delete resource 'usb_hid_midi'
+1767963675829	Delete resource 'deepflux-mix-01-midi-proto/Core/Inc/drivers/gpio.h'
+1767963759881	Delete resource 'deepflux-mix-01-midi-proto/Core/Src/drivers/gpio.c'

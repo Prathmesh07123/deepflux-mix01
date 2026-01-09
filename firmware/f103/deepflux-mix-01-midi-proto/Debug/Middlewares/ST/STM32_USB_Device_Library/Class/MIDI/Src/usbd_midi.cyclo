@@ -1,0 +1,8 @@
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:102:16:USBD_MIDI_Init	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:111:16:USBD_MIDI_DeInit	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:119:16:USBD_MIDI_DataIn	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:127:16:USBD_MIDI_DataOut	3
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:150:9:USBD_MIDI_SendPacket	6
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:189:9:USBD_MIDI_Send	5
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:204:17:USBD_MIDI_GetCfgDesc	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Src/usbd_midi.c:214:9:USBD_MIDI_RegisterInterface	2

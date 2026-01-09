@@ -1,0 +1,84 @@
+//-------------------- Ganpati Bappa Morya --------------------
+
+#include <stdint.h>
+#include <stm32f1xx.h>
+#include "encoder.h"
+
+//-------------------- CONFIG -----------------------
+
+#define ENCODER_STEP_COUNTS 2
+#define ENCODER_QUEUE_SIZE 8
+
+//===================================================
+
+//------------------ INTERNAL STATE -----------------
+
+static int16_t last_cnt = 0;
+
+static volatile encoder_event_t event_queue[ENCODER_QUEUE_SIZE];
+static volatile uint8_t evt_head = 0;
+static volatile uint8_t evt_tail = 0;
+
+//===================================================
+
+//----------------- Internal Helper -----------------
+
+static void Encoder_PushEvent(int8_t delta){
+
+	uint8_t next = (evt_head + 1) % ENCODER_QUEUE_SIZE;
+
+	if(next == evt_tail){
+		return;
+	}
+
+	event_queue[evt_head].delta = delta;
+	evt_head = next;
+
+}
+
+//===================================================
+
+//----------------- Public Function -----------------
+
+void Encoder_Init(void){
+
+	last_cnt = (int16_t)TIM2->CNT;
+	evt_head = 0;
+	evt_tail = 0;
+
+}
+
+void Encoder_Scan_1ms(void){
+
+	int16_t curr = (int16_t)TIM2->CNT;
+	int16_t diff = curr - last_cnt;
+
+	while(diff >= ENCODER_STEP_COUNTS){
+
+		Encoder_PushEvent(+1);
+		last_cnt += ENCODER_STEP_COUNTS;
+		diff -= ENCODER_STEP_COUNTS;
+
+	}
+
+	while(diff <= -ENCODER_STEP_COUNTS){
+
+		Encoder_PushEvent(-1);
+		last_cnt -= ENCODER_STEP_COUNTS;
+		diff += ENCODER_STEP_COUNTS;
+
+	}
+
+}
+
+uint8_t Encoder_GetEvent(encoder_event_t *event){
+
+	if(evt_head == evt_tail){
+		return 0;
+	}
+
+	*event = event_queue[evt_tail];
+	evt_tail = (evt_tail + 1) % ENCODER_QUEUE_SIZE;
+	return 1;
+}
+

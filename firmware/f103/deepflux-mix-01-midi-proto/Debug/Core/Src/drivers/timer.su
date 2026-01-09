@@ -1,0 +1,5 @@
+../Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+../Drivers/CMSIS/Include/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+../Core/Src/drivers/timer.c:7:6:TIM2_Encoder_Init	4	static
+../Core/Src/drivers/timer.c:34:6:TIM3_ADC_Init	4	static
+../Core/Src/drivers/timer.c:50:6:TIM4_Button_Init	8	static

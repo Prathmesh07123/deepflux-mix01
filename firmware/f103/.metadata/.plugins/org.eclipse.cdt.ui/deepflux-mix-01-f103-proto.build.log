@@ -1,10 +1,10 @@
-23:19:25 **** Incremental Build of configuration Debug for project deepflux-mix-01-f103-proto ****
+19:01:49 **** Incremental Build of configuration Debug for project deepflux-mix-01-f103-proto ****
 make -j12 all 
 arm-none-eabi-size  deepflux-mix-01-f103-proto.elf 
    text	   data	    bss	    dec	    hex	filename
-   6412	    112	   1992	   8516	   2144	deepflux-mix-01-f103-proto.elf
+   8212	    112	   1992	  10316	   284c	deepflux-mix-01-f103-proto.elf
 Finished building: default.size.stdout
  
 
-23:19:25 Build Finished. 0 errors, 0 warnings. (took 189ms)
+19:01:49 Build Finished. 0 errors, 0 warnings. (took 200ms)
 

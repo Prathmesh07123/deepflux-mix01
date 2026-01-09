@@ -1,0 +1,19 @@
+12:19:17 **** Incremental Build of configuration Debug for project usb_hid_midi ****
+make -j12 all 
+arm-none-eabi-gcc -o "usb_hid_midi.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\prath\OneDrive\Desktop\DeepFlux Technologies\DeepFlux MIX-01\github\deepflux-mix01\firmware\f103\usb_hid_midi\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_midi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_midi.elf
+ 
+arm-none-eabi-size  usb_hid_midi.elf 
+arm-none-eabi-objdump -h -S usb_hid_midi.elf  > "usb_hid_midi.list"
+   text	   data	    bss	    dec	    hex	filename
+  28104	    356	   3540	  32000	   7d00	usb_hid_midi.elf
+arm-none-eabi-objcopy  -O ihex usb_hid_midi.elf  "usb_hid_midi.hex"
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_midi.list
+ 
+Finished building: usb_hid_midi.hex
+ 
+
+12:19:17 Build Finished. 0 errors, 0 warnings. (took 658ms)
+

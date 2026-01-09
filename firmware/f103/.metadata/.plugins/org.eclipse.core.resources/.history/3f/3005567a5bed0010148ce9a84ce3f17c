@@ -1,0 +1,80 @@
+//--------------------- Ganpati Bappa Morya ----------------------
+
+#include <drivers/gpio.h>
+#include <stdint.h>
+#include <stm32f1xx.h>
+
+
+
+void GPIO_Init(void){
+
+	//Enable GPIOA CLK
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+	RCC->APB2ENR |= (1 << 5);
+	//	RCC->APB2ENR |= (1 << 4);
+	//
+	//	GPIOC->CRH &= ~(0xF << 20);
+	//	GPIOC->CRH |= (0x2 << 20);
+
+//-------------------- Rotary Encoder -----------------
+
+	// PA0 -> Encoder CH1 => CLK
+	// PA1 -> Encoder CH2 => DT
+
+	// PA0
+	GPIOA->CRL &= ~(0xF << 0);
+	GPIOA->CRL |= GPIOA_CRL_PA0_IF;
+
+	// PA1
+	GPIOA->CRL &= ~(0xF << 4);
+	GPIOA->CRL |= GPIOA_CRL_PA1_IF;
+
+//=====================================================
+
+//-------------------- UART2 Debug --------------------
+
+	// PA2 -> UART TX => Debugger RX (CNF2 = 10 , MODE2 = 11 Alternate Function (UART2 TX))
+
+	GPIOA->CRL &= ~(0xF << 8);
+	GPIOA->CRL |= GPIO_CRL_PA2_AF;
+
+//=====================================================
+
+//------------------------ ADC ------------------------
+
+	// PA4 -> ADC (POT Channel A LOW) (CNF2 = 00 , MODE2 = 00 Analog Mode Input )
+
+	GPIOA->CRL &= ~(0xF << 16);
+
+//=====================================================
+
+
+//---------------------- BUTTONS ----------------------
+
+	// PA5 -> Browser/Track Button (Input Pull-Up)
+	// PA6 -> CUE Button (Input Pull-Up)
+	// PA7 -> PLAY Button (Input Pull-Up)
+
+	// PA5
+	GPIOA->CRL &= ~(0xF << 20);
+	GPIOA->CRL |= GPIOA_CRL_PA5_IPU;
+
+	// PA6
+	GPIOA->CRL &= ~(0xF << 24);
+	GPIOA->CRL |= GPIOA_CRL_PA6_IPU;
+
+	// PA7
+	GPIOA->CRL &= ~(0xF << 28);
+	GPIOA->CRL |= GPIOA_CRL_PA7_IPU;
+
+	//Enable Pull-ups
+	GPIOA->ODR |= GPIOA_ODR_PA5;
+	GPIOA->ODR |= GPIOA_ODR_PA6;
+	GPIOA->ODR |= GPIOA_ODR_PA7;
+
+//=====================================================
+
+
+}
+
+

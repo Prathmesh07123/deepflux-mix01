@@ -1,0 +1,6 @@
+../USB_DEVICE/App/usbd_midi_if.c:22:17:MIDI_Receive	16	static
+../USB_DEVICE/App/usbd_midi_if.c:41:17:MIDI_Transmit	16	static
+../USB_DEVICE/App/usbd_midi_if.c:49:9:USB_MIDI_Send	16	static
+../USB_DEVICE/App/usbd_midi_if.c:59:6:USB_MIDI_NoteOn	24	static
+../USB_DEVICE/App/usbd_midi_if.c:72:6:USB_MIDI_NoteOff	24	static
+../USB_DEVICE/App/usbd_midi_if.c:85:6:USB_MIDI_CC	24	static
