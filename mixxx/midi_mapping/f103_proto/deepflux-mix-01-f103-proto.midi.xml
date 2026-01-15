@@ -41,11 +41,24 @@
                 <group>[Library]</group>
                 <key>DeepFluxMIX01.backButton</key>
                 <status>0x90</status>
-                <midino>0x3D</midino>
+                <midino>0x4D</midino>
                 <options>
                     <Script-Binding/>
                 </options>
             </control>
+
+            <control>
+                <description>LOAD (DECK1) - press - Load a Track into Deck 1</description>
+                <group>[Channel1]</group>
+                <key>LoadSelectedTrack</key>
+                <status>0x90</status>
+                <midino>0x4C</midino>
+                <options>
+                    <Normal/>
+                </options>
+            </control>
+
+            
 
         </controls>
 
