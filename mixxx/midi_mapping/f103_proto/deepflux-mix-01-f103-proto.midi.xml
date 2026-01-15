@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MixxxMIDIPreset schemaVersion="1" mixxxVersion="2.5">
+    <info>
+        <name>DeepFlux MIX-01 F103 Proto</name>
+        <author>Prathmesh07123</author>
+        <description>Midi Mapping for the DeepFlux MIX-01 F103 Proto</description>
+        <manual>deepflux_mix-01_f103_proto</manual>
+    </info>
+
+    <controller id = "MIX-01">
+        <scriptfiles>
+            <file functionprefix = "DeepFluxMIX01" filename = "deepflux-mix-01-f103-proto.js"/>
+        </scriptfiles>
+
+        <controls>
+
+            <control>
+                <description>BROWSE - rotate - Scroll tracklist/tree view</description>
+                <group>[Library]</group>
+                <key>MoveVertical</key>
+                <status>0xB0</status>
+                <midino>0x0A</midino>
+                <options>
+                    <SelectKnob/>
+                </options>
+            </control>
+
+            <control>
+                <description>BROWSE - press - Move cursor expand folder</description>
+                <group>[Library]</group>
+                <key>GoToItem</key>
+                <status>0x90</status>
+                <midino>0x3E</midino>
+                <options>
+                    <Normal/>
+                </options>
+            </control>
+
+            <control>
+                <description>BROWSE - press - Move cursor between track list and tree view</description>
+                <group>[Library]</group>
+                <key>DeepFluxMIX01.backButton</key>
+                <status>0x90</status>
+                <midino>0x3D</midino>
+                <options>
+                    <Script-Binding/>
+                </options>
+            </control>
+
+        </controls>
+
+    </controller>
+</MixxxMIDIPreset>
