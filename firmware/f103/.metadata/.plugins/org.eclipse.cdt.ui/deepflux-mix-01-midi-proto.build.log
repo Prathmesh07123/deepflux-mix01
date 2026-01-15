@@ -1,4 +1,4 @@
-22:26:15 **** Incremental Build of configuration Debug for project deepflux-mix-01-midi-proto ****
+23:15:54 **** Build of configuration Debug for project deepflux-mix-01-midi-proto ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I"C:/Users/prath/OneDrive/Desktop/DeepFlux Technologies/DeepFlux MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc" -I"C:/Users/prath/OneDrive/Desktop/DeepFlux Technologies/DeepFlux MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core" -I"C:/Users/prath/OneDrive/Desktop/DeepFlux Technologies/DeepFlux MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers" -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 In file included from ../Core/Src/main.c:10:
@@ -96,7 +96,7 @@ arm-none-eabi-size  deepflux-mix-01-midi-proto.elf
 arm-none-eabi-objdump -h -S deepflux-mix-01-midi-proto.elf  > "deepflux-mix-01-midi-proto.list"
 arm-none-eabi-objcopy  -O ihex deepflux-mix-01-midi-proto.elf  "deepflux-mix-01-midi-proto.hex"
    text	   data	    bss	    dec	    hex	filename
-  35660	    372	   4100	  40132	   9cc4	deepflux-mix-01-midi-proto.elf
+  35924	    372	   4100	  40396	   9dcc	deepflux-mix-01-midi-proto.elf
 Finished building: default.size.stdout
  
 Finished building: deepflux-mix-01-midi-proto.hex
@@ -104,5 +104,5 @@ Finished building: deepflux-mix-01-midi-proto.hex
 Finished building: deepflux-mix-01-midi-proto.list
  
 
-22:26:16 Build Finished. 0 errors, 13 warnings. (took 899ms)
+23:15:58 Build Finished. 0 errors, 13 warnings. (took 3s.524ms)
 

@@ -109,39 +109,12 @@ int main(void)
   						break;
   				}
   			}
-		  if(btn_evt.type == BUTTON_EVENT_RELEASED){
-			  	switch(btn_evt.button){
-	  				case BTN_ENCODER:
-	  					USB_MIDI_NoteOff(0, 62, 100);
-#ifdef DEBUG
-	  					printf("Encode Button Released\n");
-	  					fflush(stdout);
-#endif
-	  					break;
-	  				case BTN_CUE:
-	  					USB_MIDI_NoteOff(0, 61, 100);
-#ifdef DEBUG
-	  					printf("CUE Released\n");
-	  					fflush(stdout);
-#endif
-	  					break;
-					case BTN_PLAY:
-						USB_MIDI_NoteOff(0, 60, 100);
-#ifdef DEBUG
-						printf("Play Released\n");
-						fflush(stdout);
-#endif
-						break;
-					case BTN_COUNT:
-						break;
-				}
-		  }
 	  }
 
 	  if(Encoder_GetEvent(&enc_evt)){
 
 		  if(enc_evt.delta > 0){
-			    USB_MIDI_CC(0, 10, 1);
+			    USB_MIDI_CC(0, 10, 127);
 #ifdef DEBUG
 	  			printf("Encoder +1\n");
 	  			fflush(stdout);
@@ -149,7 +122,7 @@ int main(void)
 
 		  }
 		  else{
-			  	USB_MIDI_CC(0, 10, 127);
+			  	USB_MIDI_CC(0, 10, 0);
 #ifdef DEBUG
 	  			printf("Encoder -1\n");
 	  			fflush(stdout);
@@ -162,7 +135,7 @@ int main(void)
 
 		  uint8_t midi_val = adc_to_midi(adc_evt.value);
 //		  if(USB_Tx_State == 0) {
-//		      USB_MIDI_CC(0, 1, midi_val);
+		      USB_MIDI_CC(0, 1, midi_val);
 //		  }
 #ifdef DEBUG
 		  printf("Mapped ADC : %u\r\n", midi_val);

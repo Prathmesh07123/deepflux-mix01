@@ -141,7 +141,7 @@ int main(void)
 	  if(Encoder_GetEvent(&enc_evt)){
 
 		  if(enc_evt.delta > 0){
-			    USB_MIDI_CC(0, 10, 1);
+			    USB_MIDI_CC(0, 10, 127);
 #ifdef DEBUG
 	  			printf("Encoder +1\n");
 	  			fflush(stdout);
@@ -149,7 +149,7 @@ int main(void)
 
 		  }
 		  else{
-			  	USB_MIDI_CC(0, 10, 127);
+			  	USB_MIDI_CC(0, 10, 0);
 #ifdef DEBUG
 	  			printf("Encoder -1\n");
 	  			fflush(stdout);
