@@ -20,9 +20,15 @@
 
 //===========================================================
 
+//------------------- TIMER 3 ADC MACRO ---------------------
+
+#define RCC_APB1ENR_TIM3EN 	(1 << 1)	// Enable Clock For TIM3
+#define TIM3_CR2_MMS_UP		(0b010 << 4)//Update
+#define TIM3_CR1_CEN 		(1 << 0)	// Enable Counter
+
 //----------------- TIMER 4 Button MACRO --------------------
 
-#define RCC_APB1ENR_TIM4EN 	(1 << 2)	// Enable Clock For TIM3
+#define RCC_APB1ENR_TIM4EN 	(1 << 2)	// Enable Clock For TIM4
 #define TIM4_DIER_UIE		(1 << 0)	// Update Interrupt Enable
 #define TIM4_CR1_CEN 		(1 << 0)	// Enable Counter
 #define TIM4_SR_UIF			(1 << 0)	// Update Interrupt Flag
@@ -30,6 +36,7 @@
 //===========================================================
 
 void TIM2_Encoder_Init(void);
+void TIM3_ADC_Init(void);
 void TIM4_Button_Init(void);
 
 #endif /* DRIVERS_TIMER_H_ */

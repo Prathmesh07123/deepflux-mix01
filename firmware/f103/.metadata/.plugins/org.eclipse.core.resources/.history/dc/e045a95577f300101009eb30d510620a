@@ -64,7 +64,6 @@ int main(void)
   Encoder_Init();
   ADC_Init();
 
-  TIM1_LED_Init();
   TIM2_Encoder_Init();
   TIM3_ADC_Init();
   TIM4_Button_Init();

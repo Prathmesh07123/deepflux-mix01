@@ -7,6 +7,13 @@
 #include <stm32f1xx.h>
 
 //---------------- TIMER 2 Encoder MACRO --------------------
+#define RCC_APB2ENR_TIM1EN	(1 << 11)	// Enable Clock For TIM1
+#define TIM1_DIER_UIE		(1 << 0)	// Update Interrupt Enable
+#define TIM1_CR1_CEN 		(1 << 0)	// Enable Counter
+#define TIM1_SR_UIF			(1 << 0)	// Update Interrupt Flag
+
+
+//---------------- TIMER 2 Encoder MACRO --------------------
 
 #define RCC_APB1ENR_TIM2EN	(1 << 0)	// Enable Clock For TIM2
 #define TIM2_SMCR_SMS_EN	(0b011 << 0)// SMS = 011 (Encoder Mode 3) - Both Edges
@@ -35,6 +42,7 @@
 
 //===========================================================
 
+void TIM1_LED_Init(void);
 void TIM2_Encoder_Init(void);
 void TIM3_ADC_Init(void);
 void TIM4_Button_Init(void);

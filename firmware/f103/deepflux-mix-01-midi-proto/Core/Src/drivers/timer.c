@@ -4,6 +4,22 @@
 #include <stm32f1xx.h>
 #include "timer.h"
 
+void TIM1_LED_Init(void){
+
+	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+
+	TIM1->PSC = 7200 - 1;
+	TIM1->ARR = 50 - 1;
+
+	TIM1->DIER |= TIM1_DIER_UIE;
+	NVIC_SetPriority(TIM1_UP_IRQn, 15);
+	NVIC_EnableIRQ(TIM1_UP_IRQn);
+
+	TIM1->CNT = 0;
+	TIM1->CR1 |= TIM1_CR1_CEN;
+
+}
+
 void TIM2_Encoder_Init(void){
 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;

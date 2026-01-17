@@ -4,7 +4,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_midi_if.h"
 #include "usbd_midi.h"
-#include "Printf_debug.h"
 
 /* Private function prototypes -----------------------------------------------*/
 static uint16_t MIDI_Receive(uint8_t *msg, uint16_t length);
@@ -18,21 +17,20 @@ USBD_MIDI_ItfTypeDef USBD_MIDI_fops =
 };
 
 /* -------------------------------------------------------------------------- */
-/* RX callback: Host → Device				                                  */
+/* RX callback: Host → Device (optional for now)                               */
 /* -------------------------------------------------------------------------- */
 static uint16_t MIDI_Receive(uint8_t *msg, uint16_t length)
 {
     /* Each USB MIDI packet = 4 bytes */
-       uint8_t cin_cable = msg[0];
-       uint8_t status = msg[1];
-       uint8_t data1 = msg[2];
-       uint8_t data2 = msg[3];
+    /* Example packet:
+       msg[0] = CIN | Cable
+       msg[1] = Status
+       msg[2] = Data1
+       msg[3] = Data2
+    */
 
-#ifdef DEBUG
-       printf("MIDI RX: CIN_CABLE: %02X, STATUS: %02X, DATA1: %02X, DATA2: %02X\r\n",
-    		   cin_cable, status, data1, data2);
-       fflush(stdout);
-#endif
+    /* For now just ignore or debug */
+    /* You can parse here later */
 
     return length;
 }

@@ -4,7 +4,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_midi_if.h"
 #include "usbd_midi.h"
-#include "Printf_debug.h"
 
 /* Private function prototypes -----------------------------------------------*/
 static uint16_t MIDI_Receive(uint8_t *msg, uint16_t length);

@@ -17,7 +17,7 @@
 #include "usbd_midi_if.h"
 #include "Printf_debug.h"
 
-#define DEBUG
+//#define DEBUG
 
 uint8_t adc_to_midi(uint16_t adc);
 
@@ -64,7 +64,6 @@ int main(void)
   Encoder_Init();
   ADC_Init();
 
-  TIM1_LED_Init();
   TIM2_Encoder_Init();
   TIM3_ADC_Init();
   TIM4_Button_Init();
@@ -166,8 +165,8 @@ int main(void)
 //		      USB_MIDI_CC(0, 1, midi_val);
 //		  }
 #ifdef DEBUG
-//		  printf("Mapped ADC : %u\r\n", midi_val);
-//		  fflush(stdout);
+		  printf("Mapped ADC : %u\r\n", midi_val);
+		  fflush(stdout);
 #endif
 
 	  }
