@@ -9,6 +9,7 @@ C_SRCS += \
 ../Core/Src/drivers/button.c \
 ../Core/Src/drivers/encoder.c \
 ../Core/Src/drivers/gpio_bare.c \
+../Core/Src/drivers/led.c \
 ../Core/Src/drivers/timer.c 
 
 OBJS += \
@@ -16,6 +17,7 @@ OBJS += \
 ./Core/Src/drivers/button.o \
 ./Core/Src/drivers/encoder.o \
 ./Core/Src/drivers/gpio_bare.o \
+./Core/Src/drivers/led.o \
 ./Core/Src/drivers/timer.o 
 
 C_DEPS += \
@@ -23,6 +25,7 @@ C_DEPS += \
 ./Core/Src/drivers/button.d \
 ./Core/Src/drivers/encoder.d \
 ./Core/Src/drivers/gpio_bare.d \
+./Core/Src/drivers/led.d \
 ./Core/Src/drivers/timer.d 
 
 
@@ -33,7 +36,7 @@ Core/Src/drivers/%.o Core/Src/drivers/%.su Core/Src/drivers/%.cyclo: ../Core/Src
 clean: clean-Core-2f-Src-2f-drivers
 
 clean-Core-2f-Src-2f-drivers:
-	-$(RM) ./Core/Src/drivers/adc.cyclo ./Core/Src/drivers/adc.d ./Core/Src/drivers/adc.o ./Core/Src/drivers/adc.su ./Core/Src/drivers/button.cyclo ./Core/Src/drivers/button.d ./Core/Src/drivers/button.o ./Core/Src/drivers/button.su ./Core/Src/drivers/encoder.cyclo ./Core/Src/drivers/encoder.d ./Core/Src/drivers/encoder.o ./Core/Src/drivers/encoder.su ./Core/Src/drivers/gpio_bare.cyclo ./Core/Src/drivers/gpio_bare.d ./Core/Src/drivers/gpio_bare.o ./Core/Src/drivers/gpio_bare.su ./Core/Src/drivers/timer.cyclo ./Core/Src/drivers/timer.d ./Core/Src/drivers/timer.o ./Core/Src/drivers/timer.su
+	-$(RM) ./Core/Src/drivers/adc.cyclo ./Core/Src/drivers/adc.d ./Core/Src/drivers/adc.o ./Core/Src/drivers/adc.su ./Core/Src/drivers/button.cyclo ./Core/Src/drivers/button.d ./Core/Src/drivers/button.o ./Core/Src/drivers/button.su ./Core/Src/drivers/encoder.cyclo ./Core/Src/drivers/encoder.d ./Core/Src/drivers/encoder.o ./Core/Src/drivers/encoder.su ./Core/Src/drivers/gpio_bare.cyclo ./Core/Src/drivers/gpio_bare.d ./Core/Src/drivers/gpio_bare.o ./Core/Src/drivers/gpio_bare.su ./Core/Src/drivers/led.cyclo ./Core/Src/drivers/led.d ./Core/Src/drivers/led.o ./Core/Src/drivers/led.su ./Core/Src/drivers/timer.cyclo ./Core/Src/drivers/timer.d ./Core/Src/drivers/timer.o ./Core/Src/drivers/timer.su
 
 .PHONY: clean-Core-2f-Src-2f-drivers
 

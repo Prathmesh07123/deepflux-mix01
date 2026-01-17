@@ -29,6 +29,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/gpio.h ../Core/Inc/main.h \
  ../USB_DEVICE/Target/usbd_conf.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core/rcc.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/timer.h \
+ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/led.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/button.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/encoder.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/adc.h \
@@ -73,6 +74,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/gpio.h ../Core/Inc/main.h \
 ../USB_DEVICE/Target/usbd_conf.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core/rcc.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/timer.h:
+C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/led.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/button.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/encoder.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/adc.h:

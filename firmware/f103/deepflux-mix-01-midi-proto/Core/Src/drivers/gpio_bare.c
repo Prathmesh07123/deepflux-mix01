@@ -10,6 +10,7 @@ void GPIO_Init(void){
 
 	//Enable GPIOA CLK
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 	RCC->APB2ENR |= (1 << 5);
 	//	RCC->APB2ENR |= (1 << 4);
 	//
@@ -74,6 +75,20 @@ void GPIO_Init(void){
 
 //=====================================================
 
+//------------------------ LED ------------------------
+
+	// PC13 -> PLAY LED (Input Pull-Up)
+	// PC14 -> CUE LED (Input Pull-Up)
+
+	// PC13
+	GPIOC->CRH &= ~(0xF << 20);
+	GPIOC->CRH |= GPIOC_CRH_PC13;
+
+	// PC14
+	GPIOC->CRH &= ~(0xF << 24);
+	GPIOC->CRH |= GPIOC_CRH_PC14;
+
+//=====================================================
 
 }
 

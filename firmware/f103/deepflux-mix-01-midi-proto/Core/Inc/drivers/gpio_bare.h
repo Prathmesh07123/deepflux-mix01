@@ -1,9 +1,4 @@
-/*
- * gpio_bare.h
- *
- *  Created on: Jan 9, 2026
- *      Author: prath
- */
+//---------------------------- Ganpati Bappa Morya --------------------------
 
 #ifndef INC_DRIVERS_GPIO_BARE_H_
 #define INC_DRIVERS_GPIO_BARE_H_
@@ -23,6 +18,8 @@
 #define GPIOA_ODR_PA5		(1 << 5)	//Enable Pull-up
 #define GPIOA_ODR_PA6 		(1 << 6)	//Enable Pull-up
 #define GPIOA_ODR_PA7		(1 << 7)	//Enable Pull-up
+#define GPIOC_CRH_PC13		(0x2 << 20)	//LED As Output
+#define GPIOC_CRH_PC14		(0x2 << 24)	//LED As Output
 
 
 

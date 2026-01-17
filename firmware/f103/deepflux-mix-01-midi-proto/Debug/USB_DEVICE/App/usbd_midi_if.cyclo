@@ -1,6 +1,6 @@
-../USB_DEVICE/App/usbd_midi_if.c:23:17:MIDI_Receive	1
-../USB_DEVICE/App/usbd_midi_if.c:43:17:MIDI_Transmit	1
-../USB_DEVICE/App/usbd_midi_if.c:51:9:USB_MIDI_Send	1
-../USB_DEVICE/App/usbd_midi_if.c:61:6:USB_MIDI_NoteOn	1
-../USB_DEVICE/App/usbd_midi_if.c:74:6:USB_MIDI_NoteOff	1
-../USB_DEVICE/App/usbd_midi_if.c:87:6:USB_MIDI_CC	1
+../USB_DEVICE/App/usbd_midi_if.c:27:17:MIDI_Receive	5
+../USB_DEVICE/App/usbd_midi_if.c:58:17:MIDI_Transmit	1
+../USB_DEVICE/App/usbd_midi_if.c:66:9:USB_MIDI_Send	1
+../USB_DEVICE/App/usbd_midi_if.c:76:6:USB_MIDI_NoteOn	1
+../USB_DEVICE/App/usbd_midi_if.c:89:6:USB_MIDI_NoteOff	1
+../USB_DEVICE/App/usbd_midi_if.c:102:6:USB_MIDI_CC	1

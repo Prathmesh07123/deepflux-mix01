@@ -10,6 +10,7 @@
 #include "rcc.h"
 #include "gpio.h"
 #include "timer.h"
+#include "led.h"
 #include "button.h"
 #include "encoder.h"
 #include "adc.h"
@@ -63,6 +64,7 @@ int main(void)
   Button_Init();
   Encoder_Init();
   ADC_Init();
+  LED_Init();
 
   TIM1_LED_Init();
   TIM2_Encoder_Init();
@@ -197,6 +199,28 @@ void ADC1_2_IRQHandler(void)
     	ADC_Scan_ISR();
         ADC1->SR &= ~ADC_SR_EOC;
     }
+}
+
+void TIM1_UP_IRQHandler(void){
+
+	if (TIM1->SR & TIM1_SR_UIF){
+
+		TIM1->SR &= ~TIM1_SR_UIF;
+
+		if(led_play_state){
+			LED_Set(LED_PLAY, LED_ON);
+		}
+		else{
+			LED_Set(LED_PLAY, LED_OFF);
+		}
+
+		if(led_cue_state){
+			LED_Set(LED_CUE, LED_ON);
+		}
+		else{
+			LED_Set(LED_CUE, LED_OFF);
+		}
+	}
 }
 
 //==========================================

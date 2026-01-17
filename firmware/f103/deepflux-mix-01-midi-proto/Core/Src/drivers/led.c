@@ -1,0 +1,43 @@
+//--------------------------- Ganpati Bappa Morya -----------------------
+
+#include "led.h"
+#include "stm32f1xx.h"
+
+//---------------- LED Mapping ---------------
+
+#define LED_PLAY_PORT 	GPIOC
+#define LED_PLAY_PIN 	13
+
+#define LED_CUE_PORT 	GPIOC
+#define LED_CUE_PIN 	14
+
+//============================================
+
+void LED_Init(void){
+
+	LED_PLAY_PORT->BSRR = (1 << LED_PLAY_PIN);
+	LED_CUE_PORT->BSRR = (1 << LED_CUE_PIN);
+}
+
+void LED_Set(led_id_t led, led_state_t state){
+
+
+	GPIO_TypeDef *port;
+	uint32_t pin;
+
+	if(led == LED_PLAY){
+		port = LED_PLAY_PORT;
+		pin  = LED_PLAY_PIN;
+	}
+	else{
+		port = LED_CUE_PORT;
+		pin  = LED_CUE_PIN;
+	}
+
+	if(state == LED_ON){
+		port->BSRR = (1 << (pin + 16));
+	}
+	else{
+		port->BSRR = (1 << pin);
+	}
+}

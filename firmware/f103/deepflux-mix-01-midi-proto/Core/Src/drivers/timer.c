@@ -12,7 +12,7 @@ void TIM1_LED_Init(void){
 	TIM1->ARR = 50 - 1;
 
 	TIM1->DIER |= TIM1_DIER_UIE;
-	NVIC_SetPriority(TIM1_UP_IRQn, 15);
+	NVIC_SetPriority(TIM1_UP_IRQn, 3);
 	NVIC_EnableIRQ(TIM1_UP_IRQn);
 
 	TIM1->CNT = 0;
@@ -70,7 +70,7 @@ void TIM4_Button_Init(void){
 	TIM4->PSC 	= 7200 - 1;		//Prescaler for 0.1ms tick
 	TIM4->ARR 	= 10 - 1;		//ARR After 0.1 * 10 tick = 1ms
 	TIM4->DIER |= TIM4_DIER_UIE;
-	NVIC_SetPriority(TIM4_IRQn, 1);
+	NVIC_SetPriority(TIM4_IRQn, 0);
 	NVIC_EnableIRQ(TIM4_IRQn);
 	TIM4->CNT 	= 0;
 	TIM4->CR1  |= TIM4_CR1_CEN;

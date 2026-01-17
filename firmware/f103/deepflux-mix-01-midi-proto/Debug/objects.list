@@ -4,6 +4,7 @@
 "./Core/Src/drivers/button.o"
 "./Core/Src/drivers/encoder.o"
 "./Core/Src/drivers/gpio_bare.o"
+"./Core/Src/drivers/led.o"
 "./Core/Src/drivers/timer.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"

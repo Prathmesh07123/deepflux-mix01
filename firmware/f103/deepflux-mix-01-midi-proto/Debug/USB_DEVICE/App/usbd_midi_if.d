@@ -32,7 +32,8 @@ USB_DEVICE/App/usbd_midi_if.o: ../USB_DEVICE/App/usbd_midi_if.c \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core/Printf_debug.h
+ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core/Printf_debug.h \
+ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/led.h
 ../USB_DEVICE/App/usbd_midi_if.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc/usbd_midi.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
@@ -68,3 +69,4 @@ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/d
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/core/Printf_debug.h:
+C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f103/deepflux-mix-01-midi-proto/Core/Inc/drivers/led.h:

@@ -5,6 +5,10 @@
 #include "usbd_midi_if.h"
 #include "usbd_midi.h"
 #include "Printf_debug.h"
+#include "led.h"
+
+volatile uint8_t led_play_state = 0;
+volatile uint8_t led_cue_state  = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 static uint16_t MIDI_Receive(uint8_t *msg, uint16_t length);
@@ -23,16 +27,27 @@ USBD_MIDI_ItfTypeDef USBD_MIDI_fops =
 static uint16_t MIDI_Receive(uint8_t *msg, uint16_t length)
 {
     /* Each USB MIDI packet = 4 bytes */
-       uint8_t cin_cable = msg[0];
-       uint8_t status = msg[1];
+       uint8_t cin = msg[0] & 0x0F;
+       uint8_t status = msg[1] & 0xF0;
        uint8_t data1 = msg[2];
        uint8_t data2 = msg[3];
 
-#ifdef DEBUG
-       printf("MIDI RX: CIN_CABLE: %02X, STATUS: %02X, DATA1: %02X, DATA2: %02X\r\n",
-    		   cin_cable, status, data1, data2);
-       fflush(stdout);
-#endif
+//#ifdef DEBUG
+//       printf("MIDI RX: CIN_CABLE: %02X, STATUS: %02X, DATA1: %02X, DATA2: %02X\r\n",
+//    		   cin_cable, status, data1, data2);
+//       fflush(stdout);
+//#endif
+
+    if((cin == 0x09) && (status == 0x90)){
+
+    	if(data1 == 0x0B){
+    		led_play_state = (data2 > 0) ? 1 : 0;
+    	}
+    	else if(data1 == 0x0C){
+    		led_cue_state = (data2 > 0) ? 1 : 0;
+    	}
+    }
+
 
     return length;
 }
