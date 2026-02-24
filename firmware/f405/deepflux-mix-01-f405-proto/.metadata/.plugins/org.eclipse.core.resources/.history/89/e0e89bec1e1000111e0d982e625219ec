@@ -1,0 +1,13 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "gpio_bare.h"
+
+void GPIO_Init(void){
+
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOB;
+	GPIOB->MODER &= ~(0b11 << 4);
+	GPIOB->MODER |= GPIOB_MODER_B2;
+}

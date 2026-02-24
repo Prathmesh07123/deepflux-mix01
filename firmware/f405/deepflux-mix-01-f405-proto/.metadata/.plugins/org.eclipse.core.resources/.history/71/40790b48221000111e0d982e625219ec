@@ -1,0 +1,9 @@
+//--------------------- Ganpati Bappa Morya ----------------------
+
+#ifndef CORE_PRINTF_DEBUG_H_
+#define CORE_PRINTF_DEBUG_H_
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+
+#endif /* CORE_PRINTF_DEBUG_H_ */

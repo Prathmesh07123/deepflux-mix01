@@ -1,0 +1,44 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "gpio_bare.h"
+
+void GPIO_Init(void){
+
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOB;
+	GPIOB->MODER &= ~(0b11 << 4);
+	GPIOB->MODER |= GPIOB_MODER_B2;
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOA;
+
+	//-------------------- UART2 Debug --------------------
+
+		// PA2 -> UART TX => Debugger RX (CNF2 = 10 , MODE2 = 11 Alternate Function (UART2 TX))
+
+		GPIOA->MODER &= ~(0b11 << 4);
+		GPIOA->MODER |= GPIOA_MODER_PA2_AF;
+		GPIOA->AFR[0] &= ~(0xF << 8);
+		GPIOA->AFR[0] |= GPIOA_AFRL_PA2_AF7;
+
+
+	//=====================================================
+
+	//---------------------- BUTTONS ----------------------
+
+		// PA5 -> Browser/Track Button (Input Pull-Up)
+		// PA6 -> CUE Button (Input Pull-Up)
+		// PA7 -> PLAY Button (Input Pull-Up)
+
+
+	GPIOA->MODER &= ~GPIOA_MODER_PA5_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA6_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA7_IP;
+
+	//Enable Pull-ups
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA5_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA6_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA7_PU;
+
+	//=====================================================
+}

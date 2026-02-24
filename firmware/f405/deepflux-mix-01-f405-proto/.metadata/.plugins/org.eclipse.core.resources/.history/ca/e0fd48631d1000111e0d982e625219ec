@@ -1,0 +1,18 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+#ifndef DRIVER_GPIO_BARE_H_
+#define DRIVER_GPIO_BARE_H_
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+
+//********************************** GPIO REG DEFINE *********************************
+
+#define RCC_AHB1ENR_GPIOB	(1 << 1)
+#define GPIOB_MODER_B2		(0b01 << 4)
+
+//************************************************************************************
+
+void GPIO_Init(void);
+
+#endif /* DRIVER_GPIO_BARE_H_ */

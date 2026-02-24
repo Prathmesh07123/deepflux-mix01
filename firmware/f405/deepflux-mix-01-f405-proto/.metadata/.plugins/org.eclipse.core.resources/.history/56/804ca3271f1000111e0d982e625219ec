@@ -1,0 +1,21 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "gpio_bare.h"
+
+void GPIO_Init(void){
+
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOB;
+	GPIOB->MODER &= ~(0b11 << 4);
+	GPIOB->MODER |= GPIOB_MODER_B2;
+
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOA;
+	GPIOA->MODER &= ~GPIOA_MODER_PA5_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA6_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA7_IP;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA5_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA6_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA7_PU;
+}

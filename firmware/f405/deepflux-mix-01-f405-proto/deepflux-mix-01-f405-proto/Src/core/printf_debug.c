@@ -1,0 +1,35 @@
+//--------------------- Ganpati Bappa Morya ----------------------
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "printf_debug.h"
+
+
+void USART2_INIT(void){
+
+	RCC->APB1ENR |= RCC_APB1ENR_UART2EN;
+
+//	GPIOA->MODER &= ~(0b11 << 4);
+//	GPIOA->MODER |= (0b10 << 4);
+//	GPIOA->AFR[0] &= ~(0xF << 8);
+//	GPIOA->AFR[0] |= (0x7 << 8);
+
+	USART2->BRR = 0x1117;
+
+	USART2->CR1 |= USART2_CR1_TE;
+	USART2->CR1 |= USART2_CR1_UE;
+
+}
+
+void Uart_Write(int ch){
+
+	while(!(USART2->SR & USART2_SR_TXE));
+
+	USART2->DR = (ch & 0xFF);
+}
+
+int __io_putchar(int ch){
+
+	Uart_Write(ch);
+	return ch;
+}

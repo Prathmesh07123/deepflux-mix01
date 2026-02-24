@@ -1,0 +1,18 @@
+//--------------------- Ganpati Bappa Morya --------------------
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "timer.h"
+
+void TIM2_Button_Init(void){
+
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+	TIM2->PSC = 8400 - 1;
+	TIM2->ARR = 10 - 1;
+	TIM2->DIER |= TIM2_DIER_UIE;
+	NVIC_SetPriority(TIM2_IRQn, 0);
+	NVIC_EnableIRQ(TIM2_IRQn);
+	TIM2->CNT = 0;
+	TIM2->CR1 |= TIM2_CR1_CEN;
+}

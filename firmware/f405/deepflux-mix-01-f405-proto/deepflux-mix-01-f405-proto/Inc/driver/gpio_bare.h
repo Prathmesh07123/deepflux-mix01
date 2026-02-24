@@ -1,0 +1,29 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+#ifndef DRIVER_GPIO_BARE_H_
+#define DRIVER_GPIO_BARE_H_
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+
+//********************************** GPIO REG DEFINE *********************************
+
+#define RCC_AHB1ENR_GPIOB	(1 << 1)
+#define GPIOB_MODER_B2		(0b01 << 4)
+
+#define GPIOA_MODER_PA2_AF 	(0b10 << 4)
+#define GPIOA_AFRL_PA2_AF7 	(0x7 << 8)
+
+#define RCC_AHB1ENR_GPIOA	(1 << 0)	//Enable CLK for GPIOA
+#define GPIOA_MODER_PA5_IP	(0b11 << 10)	//PA5 = Input
+#define GPIOA_MODER_PA6_IP  (0b11 << 12)	//PA6 = Input
+#define GPIOA_MODER_PA7_IP	(0b11 << 14)	//PA7 = Input
+#define GPIOA_PUPDR_PA5_PU	(0b01 << 10)	//Enable Internal Pull Up for PA5
+#define GPIOA_PUPDR_PA6_PU	(0b01 << 12)	//Enable Internal Pull Up for PA6
+#define GPIOA_PUPDR_PA7_PU	(0b01 << 14)	//Enable Internal Pull Up for PA7
+
+//************************************************************************************
+
+void GPIO_Init(void);
+
+#endif /* DRIVER_GPIO_BARE_H_ */

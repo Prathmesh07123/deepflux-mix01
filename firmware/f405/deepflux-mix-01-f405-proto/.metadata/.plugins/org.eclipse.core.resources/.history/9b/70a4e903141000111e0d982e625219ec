@@ -1,0 +1,21 @@
+//-------------------------------------- Ganpati Bappa Morya ---------------------------------
+
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "rcc.h"
+#include "timer.h"
+
+int main(void)
+{
+
+	clock_168_Init();
+	TIM2_Button_Init();
+
+}
+
+//================== ISR ==================
+
+void TIM2_IRQHandler(void){
+
+}
