@@ -10,6 +10,7 @@ Src/main.o: ../Src/main.c \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/core/rcc.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/timer.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/button.h \
+ C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/encoder.h \
  C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/core/printf_debug.h
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm\ Cortex\ M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm\ Cortex\ M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:
@@ -22,4 +23,5 @@ C:/Users/prath/OneDrive/Desktop/Embedded/Arm\ Cortex\ M4/STM32F405TG/Library/stm
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/core/rcc.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/timer.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/button.h:
+C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver/encoder.h:
 C:/Users/prath/OneDrive/Desktop/DeepFlux\ Technologies/DeepFlux\ MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/core/printf_debug.h:

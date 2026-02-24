@@ -6,6 +6,7 @@
 #include "rcc.h"
 #include "timer.h"
 #include "button.h"
+#include "encoder.h"
 #include "printf_debug.h"
 
 int main(void)
@@ -15,9 +16,12 @@ int main(void)
 	GPIO_Init();
 	USART2_INIT();
 	TIM2_Button_Init();
+	TIM3_Encoder_Init();
 	Button_Init();
+	Encoder_Init();
 
 	button_event_t btn_evt;
+	encoder_event_t enc_evt;
 
 	while(1){
 
@@ -59,6 +63,21 @@ int main(void)
 				}
 			}
 		}
+
+		if(Encoder_GetEvent(&enc_evt)){
+
+			if(enc_evt.delta > 0){
+				printf("Encoder +1\n");
+				fflush(stdout);
+			}
+			else{
+				printf("Encoder -1\n");
+				fflush(stdout);
+			}
+		}
+
+//		printf("ENC: %ld\r\n", (int32_t)TIM3->CNT);
+//		fflush(stdout);
 	}
 
 
@@ -71,5 +90,6 @@ void TIM2_IRQHandler(void){
 		TIM2->SR &= ~TIM2_SR_UIF;
 
 		Button_Scan_1ms();
+		Encoder_Scan_1ms();
 	}
 }

@@ -26,19 +26,39 @@ void GPIO_Init(void){
 
 	//---------------------- BUTTONS ----------------------
 
-		// PA5 -> Browser/Track Button (Input Pull-Up)
-		// PA6 -> CUE Button (Input Pull-Up)
-		// PA7 -> PLAY Button (Input Pull-Up)
+		// PA3 -> Browser/Track Button (Input Pull-Up)
+		// PA4 -> CUE Button (Input Pull-Up)
+		// PA5 -> PLAY Button (Input Pull-Up)
 
 
+	GPIOA->MODER &= ~GPIOA_MODER_PA3_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA4_IP;
 	GPIOA->MODER &= ~GPIOA_MODER_PA5_IP;
-	GPIOA->MODER &= ~GPIOA_MODER_PA6_IP;
-	GPIOA->MODER &= ~GPIOA_MODER_PA7_IP;
 
 	//Enable Pull-ups
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA3_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA4_PU;
 	GPIOA->PUPDR |= GPIOA_PUPDR_PA5_PU;
-	GPIOA->PUPDR |= GPIOA_PUPDR_PA6_PU;
-	GPIOA->PUPDR |= GPIOA_PUPDR_PA7_PU;
+
+	//=====================================================
+
+	//-------------------- Rotary Encoder -----------------
+
+		// PA6 -> Encoder CH1 => CLK
+		// PA7 -> Encoder CH2 => DT
+
+	GPIOA->MODER &= ~(0b11 << 12);
+	GPIOA->MODER &= ~(0b11 << 14);
+
+	GPIOA->MODER |= GPIOA_MODER_PA6_AF;
+	GPIOA->MODER |= GPIOA_MODER_PA7_AF;
+
+	GPIOA->AFR[0] &= ~(0xF << 24);			//PA6
+	GPIOA->AFR[0] &= ~(0xF << 28);			//PA7
+
+	GPIOA->AFR[0] |= GPIOA_AFRL_PA6_AF2;
+	GPIOA->AFR[0] |= GPIOA_AFRL_PA7_AF2;
+
 
 	//=====================================================
 }

@@ -1,10 +1,20 @@
-01:42:18 **** Incremental Build of configuration Debug for project deepflux-mix-01-f405-proto ****
+22:31:15 **** Incremental Build of configuration Debug for project deepflux-mix-01-f405-proto ****
 make -j12 all 
+arm-none-eabi-gcc "../Src/driver/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F405xx -DSTM32 -DSTM32F4 -DSTM32F405RGTx -c -I../Inc -I"C:/Users/prath/OneDrive/Desktop/DeepFlux Technologies/DeepFlux MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/core" -I"C:/Users/prath/OneDrive/Desktop/DeepFlux Technologies/DeepFlux MIX-01/github/deepflux-mix01/firmware/f405/deepflux-mix-01-f405-proto/deepflux-mix-01-f405-proto/Inc/driver" -I"C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/encoder.d" -MT"Src/driver/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/encoder.o"
+arm-none-eabi-gcc -o "deepflux-mix-01-f405-proto.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\prath\OneDrive\Desktop\DeepFlux Technologies\DeepFlux MIX-01\github\deepflux-mix01\firmware\f405\deepflux-mix-01-f405-proto\deepflux-mix-01-f405-proto\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="deepflux-mix-01-f405-proto.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: deepflux-mix-01-f405-proto.elf
+ 
 arm-none-eabi-size  deepflux-mix-01-f405-proto.elf 
+arm-none-eabi-objdump -h -S deepflux-mix-01-f405-proto.elf  > "deepflux-mix-01-f405-proto.list"
+arm-none-eabi-objcopy  -O ihex deepflux-mix-01-f405-proto.elf  "deepflux-mix-01-f405-proto.hex"
    text	   data	    bss	    dec	    hex	filename
-   5060	     92	   1932	   7084	   1bac	deepflux-mix-01-f405-proto.elf
+   5816	     92	   1948	   7856	   1eb0	deepflux-mix-01-f405-proto.elf
 Finished building: default.size.stdout
  
+Finished building: deepflux-mix-01-f405-proto.hex
+Finished building: deepflux-mix-01-f405-proto.list
+ 
+ 
 
-01:42:18 Build Finished. 0 errors, 0 warnings. (took 198ms)
+22:31:15 Build Finished. 0 errors, 0 warnings. (took 602ms)
 

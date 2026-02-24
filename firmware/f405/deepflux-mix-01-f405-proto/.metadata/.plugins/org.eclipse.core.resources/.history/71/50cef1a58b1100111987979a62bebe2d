@@ -1,0 +1,35 @@
+//------------------------- Ganpati Bappa Morya ---------------------
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "encoder.h"
+
+//------------------ INTERNAL STATE -----------------
+
+static int16_t last_cnt = 0;
+
+static volatile encoder_event_t event_queue[ENCODER_QUEUE_SIZE];
+static volatile uint8_t evt_head = 0;
+static volatile uint8_t evt_tail = 0;
+
+//===================================================
+
+//----------------- Public Function -----------------
+
+void Encoder_Init(void){
+
+	last_cnt = (int16_t)TIM3->CNT;
+	evt_head = 0;
+	evt_tail = 0;
+
+}
+
+void Encoder_Scan_1ms(void){
+
+	int16_t curr = (int16_t)TIM3->CNT;
+	int16_t diff = last_cnt - curr;
+
+	while(diff >= ENCODER_STEP_COUNTS){
+
+	}
+}

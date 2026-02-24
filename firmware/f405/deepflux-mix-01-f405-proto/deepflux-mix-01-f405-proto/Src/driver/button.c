@@ -9,9 +9,9 @@
 
 static const uint16_t button_pins[BTN_COUNT] = {
 
-		(1 << 5),	// Encoder Button PA5
-		(1 << 6),	// CUE Button PA6
-		(1 << 7)	// Play Button PA7
+		(1 << 3),	// Encoder Button PA3
+		(1 << 4),	// CUE Button PA4
+		(1 << 5)	// Play Button PA5
 };
 
 static uint8_t raw_last[BTN_COUNT];			// Last raw GPIO read

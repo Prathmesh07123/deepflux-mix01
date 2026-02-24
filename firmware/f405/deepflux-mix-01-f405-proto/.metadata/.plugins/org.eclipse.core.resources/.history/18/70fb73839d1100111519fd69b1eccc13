@@ -1,0 +1,96 @@
+//--------------- Ganpati Bappa Morya ----------------
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "button.h"
+
+#define EVENT_QUEUE_SIZE 8
+#define DEBOUNCE_TIME   8
+
+static const uint16_t button_pins[BTN_COUNT] = {
+
+		(1 << 5),	// Encoder Button PA5
+		(1 << 6),	// CUE Button PA6
+		(1 << 7)	// Play Button PA7
+};
+
+static uint8_t raw_last[BTN_COUNT];			// Last raw GPIO read
+static uint8_t stable_state[BTN_COUNT];		// Debounced state
+static uint8_t debounce_cnt[BTN_COUNT];		// Counter for each button
+
+static volatile button_event_t event_queue[EVENT_QUEUE_SIZE];
+static volatile uint8_t evt_head = 0;
+static volatile uint8_t evt_tail = 0;
+
+//=============== Internal Helper ================
+
+static void Button_PushEvent(button_id_t btn, button_event_type_t type){
+
+	uint8_t next = (evt_head + 1) % EVENT_QUEUE_SIZE;
+
+	//drop if Buffer FULL
+	if(next == evt_tail){
+		return;
+	}
+
+	event_queue[evt_head].button = btn;
+	event_queue[evt_head].type = type;
+	evt_head = next;
+}
+
+
+//=============== Public API ================
+
+void Button_Init(void){
+
+	for(uint8_t i = 0; i < BTN_COUNT; i++){
+		raw_last[i] = 1;
+		stable_state[i] = 1;
+		debounce_cnt[i] = 0;
+	}
+
+	evt_head = 0;
+	evt_tail = 0;
+}
+
+void Button_Scan_1ms(void){
+
+
+	for(uint8_t i = 0; i < BTN_COUNT; i++){
+
+		uint8_t raw = (GPIOA->IDR & button_pins[i]) ? 1 : 0;
+
+		if(raw == raw_last[i]){
+			if(debounce_cnt[i] < DEBOUNCE_TIME){
+				debounce_cnt[i]++;
+			}
+			else{
+				if(stable_state[i] != raw){
+					stable_state[i] = raw;
+					if(raw == 0){
+						Button_PushEvent(i, BUTTON_EVENT_PRESSED);
+//						GPIOC->ODR ^= (1 << 13);
+					}
+					else{
+						Button_PushEvent(i, BUTTON_EVENT_RELEASED);
+					}
+				}
+			}
+		}
+		else{
+			debounce_cnt[i] = 0;
+			raw_last[i] = raw;
+		}
+	}
+}
+
+uint8_t Button_GetEvent(button_event_t *event){
+
+	if(evt_head == evt_tail){
+		return 0;
+	}
+
+	*event = event_queue[evt_tail];
+	evt_tail = (evt_tail + 1) % EVENT_QUEUE_SIZE;
+	return 1;
+}

@@ -1,3 +1,4 @@
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
 C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	16	static
 ../Src/driver/timer.c:7:6:TIM2_Button_Init	8	static
+../Src/driver/timer.c:20:6:TIM3_Encoder_Init	4	static

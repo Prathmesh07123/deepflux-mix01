@@ -1,0 +1,4 @@
+../Src/driver/encoder.c:19:13:Encoder_PushEvent	24	static
+../Src/driver/encoder.c:35:6:Encoder_Init	4	static
+../Src/driver/encoder.c:43:6:Encoder_Scan_1ms	16	static
+../Src/driver/encoder.c:63:9:Encoder_GetEvent	16	static

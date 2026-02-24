@@ -1,0 +1,65 @@
+//---------------------------- Ganpati Bappa Morya --------------------------
+
+
+#include <stdint.h>
+#include <stm32f4xx.h>
+#include "gpio_bare.h"
+
+void GPIO_Init(void){
+
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOB;
+	GPIOB->MODER &= ~(0b11 << 4);
+	GPIOB->MODER |= GPIOB_MODER_B2;
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOA;
+
+	//-------------------- UART2 Debug --------------------
+
+		// PA2 -> UART TX => Debugger RX (CNF2 = 10 , MODE2 = 11 Alternate Function (UART2 TX))
+
+		GPIOA->MODER &= ~(0b11 << 4);
+		GPIOA->MODER |= GPIOA_MODER_PA2_AF;
+		GPIOA->AFR[0] &= ~(0xF << 8);
+		GPIOA->AFR[0] |= GPIOA_AFRL_PA2_AF7;
+
+
+	//=====================================================
+
+	//---------------------- BUTTONS ----------------------
+
+		// PA3 -> Browser/Track Button (Input Pull-Up)
+		// PA4 -> CUE Button (Input Pull-Up)
+		// PA5 -> PLAY Button (Input Pull-Up)
+
+
+	GPIOA->MODER &= ~GPIOA_MODER_PA3_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA4_IP;
+	GPIOA->MODER &= ~GPIOA_MODER_PA5_IP;
+
+	//Enable Pull-ups
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA3_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA4_PU;
+	GPIOA->PUPDR |= GPIOA_PUPDR_PA5_PU;
+
+	//=====================================================
+
+	//-------------------- Rotary Encoder -----------------
+
+		// PA6 -> Encoder CH1 => CLK
+		// PA7 -> Encoder CH2 => DT
+
+	GPIOA->MODER &= ~(0b11 << 12);
+	GPIOA->MODER &= ~(0b11 << 14);
+
+	GPIOA->MODER |= GPIOA_MODER_PA6_AF;
+	GPIOA->MODER |= GPIOA_MODER_PA7_AF;
+
+	GPIOA->AFR[0] &= ~(0xF << 24);			//PA6
+	GPIOA->AFR[0] &= ~(0xF << 28);			//PA7
+
+	GPIOA->AFR[0] |= GPIOA_AFRL_PA6_AF2;
+	GPIOA->AFR[0] |= GPIOA_AFRL_PA7_AF2;
+
+
+
+	//=====================================================
+}

@@ -6,16 +6,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Src/driver/button.c \
+../Src/driver/encoder.c \
 ../Src/driver/gpio_bare.c \
 ../Src/driver/timer.c 
 
 OBJS += \
 ./Src/driver/button.o \
+./Src/driver/encoder.o \
 ./Src/driver/gpio_bare.o \
 ./Src/driver/timer.o 
 
 C_DEPS += \
 ./Src/driver/button.d \
+./Src/driver/encoder.d \
 ./Src/driver/gpio_bare.d \
 ./Src/driver/timer.d 
 
@@ -27,7 +30,7 @@ Src/driver/%.o Src/driver/%.su Src/driver/%.cyclo: ../Src/driver/%.c Src/driver/
 clean: clean-Src-2f-driver
 
 clean-Src-2f-driver:
-	-$(RM) ./Src/driver/button.cyclo ./Src/driver/button.d ./Src/driver/button.o ./Src/driver/button.su ./Src/driver/gpio_bare.cyclo ./Src/driver/gpio_bare.d ./Src/driver/gpio_bare.o ./Src/driver/gpio_bare.su ./Src/driver/timer.cyclo ./Src/driver/timer.d ./Src/driver/timer.o ./Src/driver/timer.su
+	-$(RM) ./Src/driver/button.cyclo ./Src/driver/button.d ./Src/driver/button.o ./Src/driver/button.su ./Src/driver/encoder.cyclo ./Src/driver/encoder.d ./Src/driver/encoder.o ./Src/driver/encoder.su ./Src/driver/gpio_bare.cyclo ./Src/driver/gpio_bare.d ./Src/driver/gpio_bare.o ./Src/driver/gpio_bare.su ./Src/driver/timer.cyclo ./Src/driver/timer.d ./Src/driver/timer.o ./Src/driver/timer.su
 
 .PHONY: clean-Src-2f-driver
 
