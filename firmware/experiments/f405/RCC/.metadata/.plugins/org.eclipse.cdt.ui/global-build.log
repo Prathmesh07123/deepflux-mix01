@@ -1,0 +1,110 @@
+22:13:26 **** Incremental Build of configuration Debug for project RCC_168 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F405xx -DSTM32 -DSTM32F4 -DSTM32F405RGTx -c -I../Inc -I"C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:5:
+../Src/rcc.h:11: warning: "RCC_APB1ENR_PWREN" redefined
+   11 | #define RCC_APB1ENR_PWREN       (1 << 28)       //Enable Power Controller Reg
+      | 
+In file included from C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:128,
+                 from ../Src/main.c:4:
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9719: note: this is the location of the previous definition
+ 9719 | #define RCC_APB1ENR_PWREN                  RCC_APB1ENR_PWREN_Msk
+      | 
+../Src/rcc.h:12: warning: "PWR_CR_VOS" redefined
+   12 | #define PWR_CR_VOS                      (1 << 14)       //VOS = Scale 1 Mode
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9100: note: this is the location of the previous definition
+ 9100 | #define PWR_CR_VOS             PWR_CR_VOS_Msk                                  /*!< VOS bit (Regulator voltage scaling output selection) */
+      | 
+../Src/rcc.h:16: warning: "RCC_CR_HSEON" redefined
+   16 | #define RCC_CR_HSEON            (1 << 16)               //RCC HSE Clock Enable
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9167: note: this is the location of the previous definition
+ 9167 | #define RCC_CR_HSEON                       RCC_CR_HSEON_Msk
+      | 
+../Src/rcc.h:17: warning: "RCC_CR_HSERDY" redefined
+   17 | #define RCC_CR_HSERDY           (1 << 17)               //RCC HSE clock ready flag
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9170: note: this is the location of the previous definition
+ 9170 | #define RCC_CR_HSERDY                      RCC_CR_HSERDY_Msk
+      | 
+../Src/rcc.h:19: warning: "FLASH_ACR_ICEN" redefined
+   19 | #define FLASH_ACR_ICEN          (1 << 9)                //Instruction cache enable
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:6401: note: this is the location of the previous definition
+ 6401 | #define FLASH_ACR_ICEN                 FLASH_ACR_ICEN_Msk
+      | 
+../Src/rcc.h:20: warning: "FLASH_ACR_DCEN" redefined
+   20 | #define FLASH_ACR_DCEN          (1 << 10)               //Data cache enable
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:6404: note: this is the location of the previous definition
+ 6404 | #define FLASH_ACR_DCEN                 FLASH_ACR_DCEN_Msk
+      | 
+../Src/rcc.h:21: warning: "FLASH_ACR_PRFTEN" redefined
+   21 | #define FLASH_ACR_PRFTEN        (1 << 8)                //Prefetch enable
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:6398: note: this is the location of the previous definition
+ 6398 | #define FLASH_ACR_PRFTEN               FLASH_ACR_PRFTEN_Msk
+      | 
+../Src/rcc.h:22: warning: "RCC_CFGR_HPRE_1" redefined
+   22 | #define RCC_CFGR_HPRE_1         (0b000 << 4)    //system clock not divided (AHB prescaler)
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9270: note: this is the location of the previous definition
+ 9270 | #define RCC_CFGR_HPRE_1                    (0x2UL << RCC_CFGR_HPRE_Pos)         /*!< 0x00000020 */
+      | 
+../Src/rcc.h:24: warning: "RCC_CFGR_PPRE2_2" redefined
+   24 | #define RCC_CFGR_PPRE2_2        (0b100 << 13)   //AHB clock divided by 2 (APB2 prescaler)
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9304: note: this is the location of the previous definition
+ 9304 | #define RCC_CFGR_PPRE2_2                   (0x4UL << RCC_CFGR_PPRE2_Pos)        /*!< 0x00008000 */
+      | 
+../Src/rcc.h:29: warning: "RCC_PLLCFGR_PLLSRC" redefined
+   29 | #define RCC_PLLCFGR_PLLSRC      (1 << 22)               //HSE As PLL Source
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9227: note: this is the location of the previous definition
+ 9227 | #define RCC_PLLCFGR_PLLSRC                 RCC_PLLCFGR_PLLSRC_Msk
+      | 
+../Src/rcc.h:30: warning: "RCC_CR_PLLON" redefined
+   30 | #define RCC_CR_PLLON            (1 << 24)               //Main PLL (PLL) enable
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9179: note: this is the location of the previous definition
+ 9179 | #define RCC_CR_PLLON                       RCC_CR_PLLON_Msk
+      | 
+../Src/rcc.h:31: warning: "RCC_CR_PLLRDY" redefined
+   31 | #define RCC_CR_PLLRDY           (1 << 25)               //Main PLL (PLL) clock ready flag
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9182: note: this is the location of the previous definition
+ 9182 | #define RCC_CR_PLLRDY                      RCC_CR_PLLRDY_Msk
+      | 
+../Src/rcc.h:32: warning: "RCC_CFGR_SW_PLL" redefined
+   32 | #define RCC_CFGR_SW_PLL         (0b10 << 0)             //PLL selected as system clock
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9252: note: this is the location of the previous definition
+ 9252 | #define RCC_CFGR_SW_PLL                    0x00000002U                         /*!< PLL selected as system clock */
+      | 
+../Src/rcc.h:33: warning: "RCC_CFGR_SWS" redefined
+   33 | #define RCC_CFGR_SWS            (0b11 << 2)             //Scan SWS Bits
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9257: note: this is the location of the previous definition
+ 9257 | #define RCC_CFGR_SWS                       RCC_CFGR_SWS_Msk                    /*!< SWS[1:0] bits (System Clock Switch Status) */
+      | 
+../Src/rcc.h:34: warning: "RCC_CFGR_SWS_PLL" redefined
+   34 | #define RCC_CFGR_SWS_PLL        (0b10 << 2)             //PLL used as the system clock
+      | 
+C:/Users/prath/OneDrive/Desktop/Embedded/Arm Cortex M4/STM32F405TG/Library/stm32cubef4-v1-28-0/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:9263: note: this is the location of the previous definition
+ 9263 | #define RCC_CFGR_SWS_PLL                   0x00000008U                         /*!< PLL used as system clock                   */
+      | 
+arm-none-eabi-gcc -o "RCC_168.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\prath\OneDrive\Desktop\DeepFlux Technologies\DeepFlux MIX-01\github\deepflux-mix01\firmware\experiments\f405\RCC\RCC_168\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RCC_168.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RCC_168.elf
+ 
+arm-none-eabi-size  RCC_168.elf 
+arm-none-eabi-objdump -h -S RCC_168.elf  > "RCC_168.list"
+arm-none-eabi-objcopy  -O ihex RCC_168.elf  "RCC_168.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1188	      0	   1568	   2756	    ac4	RCC_168.elf
+Finished building: default.size.stdout
+ 
+Finished building: RCC_168.hex
+Finished building: RCC_168.list
+ 
+ 
